@@ -1,0 +1,48 @@
+.access-wrap{
+  border: solid 1px #ccc;
+  display:flex;
+  margin: 0.3rem 0 0 0;
+  .access-category{
+    flex:1;
+  }
+}
+
+.access-category{
+  font-size: 0.95rem;
+  &:nth-child(even){ background: #f4f4f9; }
+  h4{
+    border-bottom: solid 1px #ccc;
+    height: 40px;
+    line-height: 26px;
+    margin: 0;
+    padding: 0.5rem 0;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.access-category ul{
+  font-size: 0.935rem;
+  list-style: none;
+  margin:0;
+  padding: 0;
+  li{
+    margin: 0.3rem 0 0.3rem 0;
+    padding: 0.2rem 0.5rem;
+    label{
+      color: #111;
+      cursor: pointer;
+      display: block;
+      width: 100%;
+    }
+    input[type="checkbox"]{
+      appearance: checkbox;
+
+    }
+  }
+}
+
+.access-wrap .access-category ul li{
+  color: #999;
+   &.active{ color: rgb(3, 110, 250); }
+}

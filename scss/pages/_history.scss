@@ -1,0 +1,21 @@
+.history-wrap{
+  
+}
+
+.history-wrap .common-tr{
+    // div:first-child{ justify-content: flex-start; }
+    &.process{
+        div:nth-child(2){
+            color: red;
+        }
+    }
+    &.done{
+        div:nth-child(2){
+            color: #165bf5;
+        }
+    }
+}
+
+.history-popup{
+    padding: 0.5rem 1rem 0.5rem;
+}

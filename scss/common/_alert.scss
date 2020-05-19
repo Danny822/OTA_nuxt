@@ -1,0 +1,49 @@
+.alert-mask {
+    background: rgba(#000, 0.6);
+    height: 100%;
+    top: 0;
+    text-align: center;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    z-index: var(--z-alert);
+    &.withoutMask { background: none; }
+}
+
+.alert-wrap {
+    background: #fff;
+    border-radius: 10px;
+    left: 50%;
+    max-width: 450px;
+    margin: 0 auto;
+    // top: 15%;
+    padding: 0;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    animation: fadeDown .5s forwards;
+    @keyframes fadeDown{
+        0%{ top: 0; }
+        50%{ top: 18%; }
+        100%{ top: 15%; }
+    }
+}
+
+.alert-body {
+    .alert-content{
+        font-size: 18px;
+        // @include rwd(mobile,500px,0){font-size: 16px;};
+        padding: 2% 0px;
+    }
+    .btn-wrap{
+        button{
+            display: inline-block;//for iphone se
+            font-size: 14px;
+            padding: 1.5% 0;
+            margin: 2% 0.5rem;
+            height: 100%;
+            width: 35%;
+            @media(min-width: 500px) { font-size: 16px; width: 30%; }  
+        }
+    }
+}

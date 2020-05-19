@@ -1,0 +1,75 @@
+
+// font-family: 'Roboto', sans-serif; 拿來用在英文及數字
+// font-family: 'Lato', sans-serif;   拿來用在數字
+// font-family: \5FAE\8EDF\6B63\9ED1\9AD4; 微軟正體字
+// font-family: 'Noto Sans TC'; 思源黑體
+/* Noto Sans TC (Chinese_traditional) http://www.google.com/fonts/earlyaccess */
+
+@import url("https://fonts.googleapis.com/css?family=Lato|Roboto");
+
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 100;
+  src: url(https://fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.woff2)
+      format('woff2'),
+    // url(https:/fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.woff)
+    //   format('woff'),
+    url(https://fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.otf)
+      format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 300;
+  src: url(https://fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.woff2)
+      format('woff2'),
+    url(https://fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.woff)
+      format('woff'),
+    url(https://fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.otf)
+      format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.woff2)
+      format('woff2'),
+    url(https://fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.woff)
+      format('woff'),
+    url(https://fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.otf)
+      format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 500;
+  src: url(https://fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.woff2)
+      format('woff2'),
+    url(https://fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.woff)
+      format('woff'),
+    url(https://fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.otf)
+      format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.woff2)
+      format('woff2'),
+    url(https://fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.woff)
+      format('woff'),
+    url(https://fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.otf)
+      format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 900;
+  src: url(https://fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Black.woff2)
+      format('woff2'),
+    url(https://fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Black.woff)
+      format('woff'),
+    url(https://fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Black.otf)
+      format('opentype');
+}

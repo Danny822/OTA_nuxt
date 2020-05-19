@@ -1,0 +1,89 @@
+.common-table{
+    display: flex;
+    font-size: 0.85rem;
+    flex-direction: column;
+    margin: 1rem 0;
+    width: 100%;
+}
+
+.common-th, .common-tr{
+    display: flex;
+    // min-height: 2.2rem;
+    width: 100%;
+    div{
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        flex: 1;
+        height: 100%;
+        min-height: 2.2rem;
+        justify-content: center;
+    }
+}
+
+.common-th{
+    border-top: solid 2px #000;
+    border-bottom: solid 2px #000;
+    font-size: 0.8rem;
+    font-weight: bold;
+    >div{ min-height: 1.8rem; }
+}
+
+.common-tr{
+    border-bottom: solid 1px #ccc;
+}
+
+.common-th, .common-tr{
+    div{
+       a{
+           margin: 0 0.2rem;
+           &:link, &:visited{ text-decoration: none; }
+           &:hover, &:active{ text-decoration: underline; }
+
+       }
+       input[type="checkbox"]{
+           appearance: checkbox;
+           -moz-appearance: checkbox;
+           -webkit-appearance: checkbox;
+           height: 18px;
+           margin: 0 5px 0 0;
+           width: 18px;
+       }
+    }
+}
+
+.icon-edit{
+    margin: 0 0 0 1rem;
+    svg{
+        color: #2c74e7;
+        cursor: pointer;
+        font-size: 1.2rem;        
+    }
+}
+
+.icon-sort{
+    margin: 0 0 0 0.5rem;
+    svg{
+        // color: #2c74e7;
+        cursor: pointer;
+        font-size: 0.7rem;        
+    }
+}
+
+.icon-detail{
+    margin: 0 0.4rem 0;
+    svg{
+        color: #2f8ad8;
+        cursor: pointer;
+        font-size: 1.1rem;        
+    }
+}
+
+.icon-delete{
+    margin: 0 0.2rem 0 0;
+    svg{
+        color: red;
+        cursor: pointer;
+        font-size: 0.9rem;        
+    }
+}

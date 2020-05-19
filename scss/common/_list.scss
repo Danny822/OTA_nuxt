@@ -1,0 +1,76 @@
+$list_titleWidth: 30%;
+$list_detailWidth: 100% - $list_titleWidth;
+
+ul.list-wrap {
+    border-radius: 5px;
+    list-style: none;
+    margin: 0.5rem auto 0.5rem;
+    min-width: 320px;
+    padding: 0;
+    width: 80%;
+    li{    
+        display: flex;   
+        margin: 5px 0;
+    }
+}
+ul.list-wrap li{
+    .title, .detail{
+        align-items: center;
+        display: flex;
+        font-size: 0.9rem;
+        min-height: 40px;
+    }
+    .title{
+        color: #111;
+        font-weight: bold;
+        justify-content: flex-end;
+        padding: 0 10px 0 5px;
+        text-align: right;
+        width: $list_titleWidth;
+        &.left{ text-align: left; }
+    }
+    .detail{
+        color: #333;
+        width: $list_detailWidth;
+        
+    }
+}
+
+ul.list-wrap li .detail {
+    input[type="text"],input[type="password"], select{
+        box-sizing: border-box;
+        border: solid 1px #c3c3c3;
+        border-radius: 0.2rem;
+        height: 32px;
+        line-height: 32px;
+        padding: 0 10px;
+        width: 80%;
+        &:focus{ 
+            box-shadow: 0 0 3px #51b9ff!important;
+            border: solid 1px #51b9ff!important;
+        }
+    }
+    select{
+        -moz-appearance: menulist;
+        -webkit-appearance: menulist;
+        appearance: menulist;
+    }
+    textarea{ padding: 5px 10px; }
+}
+
+ul.list-info {
+    &.dv2 li{ float: left; width: 50%; } 
+    &.white{
+        background: #fff;
+        border: solid 3px #eee;
+    }
+    &.height-auto li{ .title, .detail{height: auto;}  }
+    &.line li{  border-bottom: solid 2px #eee; }
+
+}
+
+
+
+
+
+

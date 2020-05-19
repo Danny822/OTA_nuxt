@@ -1,0 +1,81 @@
+/***************[Button]**************/
+.btn-wrap{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+button{
+    align-items: center;
+    background: #0065d8;
+    border: none;
+    border-radius: 40px;
+    color: #fff;
+    display: flex;
+    font-weight: bold;
+    font-size: 1rem;
+    font-weight: normal;
+    height: 40px;
+    justify-content: center;
+    // margin: 0 0.5rem;
+    width: 150px;
+    &:hover, &:focus, &:active{ background: #0059bf; }
+    &.small{
+        font-weight: normal;
+        font-size:1rem;
+        padding: 5px 10px;
+    }
+}
+button:focus, button:active{ outline:0; }
+
+button.purple{
+    background: #8832e6;
+    &:hover, &:focus, &:active{  background:#7523d0; }
+}
+
+button.pink{
+    background: #fb7575;
+    &:hover, &:active{ background: #f56d6d; }
+}
+
+button.orange{
+    background: #ff5722;
+    &:hover, &:focus, &:active{  background:#f14d1b; }
+}
+
+button.orange-light{
+    background: #ff9b46;
+    &:hover, &:focus, &:active{  background:#f18529; }
+}
+
+button.green{
+    background: #79b130;
+    &:hover, &:active{ background: #3ba920; }
+}
+
+button.gray{
+    background: #757575;
+    &:hover, &:focus, &:active{  background:#555555; }
+}
+
+button.black{
+    background: #434343;
+    background: linear-gradient(#595858 0%, #434343 50%, #373737 100%);
+    &:hover, &:focus, &:active{  background: linear-gradient(#595858 0%, #434343 50%, #373737 100%); }
+}
+
+/** can not click **/
+button:disabled{
+    background: #3c3635;
+    background: linear-gradient(180deg, #393452 0%, #9f9cb9 15%, #283258 77%, #070623);
+    border: 1px solid #52506f;
+    text-shadow: 0 1px 1px #747372;
+    color: #020531;
+    &:hover{
+        background: #3c3635;
+        background: linear-gradient(180deg, #393452 0%, #9f9cb9 15%, #283258 77%, #070623);
+    }
+}

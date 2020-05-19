@@ -1,0 +1,102 @@
+# 2019-07-10  金好運日版-部署 gitlab-ci
+
+# ------------------------------------------------------------------------------
+# 變數區
+# ------------------------------------------------------------------------------
+.scp_tmpl: &scp_tmpl
+  stage: deploy
+  image: dronelab/scp
+  script: dronelab
+  allow_failure: false
+  when: manual
+
+.ssh_tmpl: &ssh_tmpl
+  stage: deploy
+  image: dronelab/ssh
+  script: dronelab
+  allow_failure: false
+
+.test_server_vars:
+  variables: &test_server_vars
+    host: $TETS_HOST
+    user: $JUMP_SERVER_USER
+    key: $SSH_PRIVATE_KEY
+    # password: $JUMP_SERVER_PWD
+    proxy_host: $JUMP_SERVER_IP
+    proxy_user: $JUMP_SERVER_USER
+    proxy_password: $JUMP_SERVER_PWD
+    command_timeout: 10m
+
+.scp_vars:
+  variables: &scp_vars
+    target: ~/
+    source: karasu.tar.gz
+
+.ssh_client_vars:
+  variables: &ssh_client_vars
+      script: |
+        export PATH=/home/danielwang/.nvm/versions/node/v10.10.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+        export NVM_DIR=/home/danielwang/.nvm
+        export NVM_BIN=/home/danielwang/.nvm/versions/node/v10.10.0/bin
+        rm -rf karasu_client_deploy
+        tar zxvf client.tar.gz
+        cd karasu_client_deploy
+        pm2 stop Karasu Frontend
+        pm2 start ecosystem.config.js
+cache:
+  paths:
+    - node_modules/
+
+stages:
+  - build_stg
+  - deploy_scp_stg
+  - deploy_ssh_stg
+
+# -----------------------------------測試機 Client--------------------------------------------
+build-client:
+  image: igs170911/rsync-node:1.0.5
+  stage: build_stg
+  only:
+    - branches
+  script:
+    - rm -rf ecosystem.config.js
+    - rm -rf ark_oauth.js
+    - git clone http://$Deploy_Name:$Deploy_PWD@192.168.133.169:10080/igs170911/karasu_frontend_config.git
+    - cp karasu_frontend_config/stg/ark_oauth.js ./constants/ark_oauth.js
+    - cp karasu_frontend_config/stg/ecosystem.config.js ecosystem.config.js
+    - rm -rf karasu_frontend_config
+    - yarn install
+    - yarn build
+    - cd ..
+    - tar zcvf client.tar.gz karasu_client_deploy/
+    - cp client.tar.gz karasu_client_deploy/
+  artifacts:
+    paths:
+      - "client.tar.gz"
+    expire_in: 15 mins
+
+# 在這邊下面多出來的 variables 如果跟模板中有一樣，就覆蓋
+deploy_scp_client_stg:
+  <<: *scp_tmpl
+  stage: deploy_scp_stg
+  variables:
+    <<: *test_server_vars
+    <<: *scp_vars
+    source:
+      client.tar.gz
+  only:
+    - branches
+
+deploy_ssh_client_stg:
+  <<: *ssh_tmpl
+  stage: deploy_ssh_stg
+  variables:
+    <<: *test_server_vars
+    <<: *ssh_client_vars
+    NVM_DIR: /home/danielwang/.nvm
+    PATH: /home/danielwang/.nvm/versions/node/v10.10.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+    NVM_BIN: /home/danielwang/.nvm/versions/node/v10.10.0/bin
+  only:
+    - branches
+
+# -----------------------------------測試機 Client--------------------------------------------

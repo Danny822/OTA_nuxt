@@ -1,0 +1,24 @@
+//treasure tip up
+@keyframes pop {
+    from {
+
+        margin-top: 0;
+    }      
+    to {
+        margin-top: -2%;
+
+
+    }
+}
+
+//lottery floating
+@keyframes floating{
+    from {
+        opacity: 1;
+        top: 0;
+    }    
+    to {
+        top: -2%;
+        opacity: 0.4;
+    }
+}

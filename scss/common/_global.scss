@@ -1,0 +1,123 @@
+/* Global Styles */
+body {
+    background  : var(--background-color);
+	color       : var(--font-color);
+	font-family : var(--primary-font);
+    font-weight : var(--font-weight);
+	line-height : normal;
+
+}
+
+html, body{
+    font-size: 16px;
+    @media(min-width: 411px){ font-size: 18px; }
+    @media(min-width: 480px){ font-size: 19px; }
+    // @media(min-width: 600px){ font-size: 20px; }
+    @media(min-width: 768px){ font-size: 20px; }
+    @media(min-width: 1024px){ font-size: 18px; }
+
+}
+
+a {
+    color: var(--link-color);
+    cursor: pointer;
+	text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+}
+a:link, a:hover, a:visited, a:active{ border:none; outline: none; }
+
+a, img{ @include no-select; }
+
+a:focus, input:focus, textarea:focus, select:focus, button:focus{ outline:0; }
+input, textarea, select{ -webkit-appearance: none; }
+
+input::-moz-placeholder { opacity: 1;  }
+
+//修正google自動填入固定顏色
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active
+{
+    // -webkit-box-shadow: 0 0 0px 1000px rgba(192,192,192,0.2) inset; /*淡淡的白*/
+    -webkit-box-shadow: 0 0 1000px #070e1f inset;
+    transition: background-color 5000s ease-in-out 0s; /*透明*/
+    -webkit-text-fill-color: #fff; /*字體顏色*/
+}
+
+.clear{ clear:both; }
+
+.clearfix:before,.clearfix:after{
+    content:"";
+    display:table;
+}
+.clearfix:after{clear:both;}
+.clearfix{
+    *zoom:1;/*IE/7/6*/
+}
+
+/***************[Layout Css]**************/
+.left  { float: left; }
+.right { float: right; }
+.center{ margin: 0 auto; text-align:center; }
+
+.t-left  { text-align: left; }
+.t-right { text-align: right; }
+.t-center{ text-align: center; }
+
+.relative { position: relative; }
+.absolute { position: absolute; }
+.fixed    { position: fixed;    }
+
+.hide { display: none !important; }
+.show { display: block !important; }
+
+.opacity-show{ opacity:1 !important; }
+.opacity-hide{ opacity:0 !important; }
+
+.img100 { width: 100%; }
+
+// .txt-red { color: $accent-color; }
+.txt-green{ color: #487f06; }
+.txt-orange{ color: #ff6600; }
+.txt-deep-blue{ color: #274876; }
+.txt-deep-red{ color: #850303; }
+.txt-deep-green{ color: #047109; }
+.txt-white{ color: #fff; }
+
+.txt-bold { font-weight: bold; }
+
+@for $i from 1 through 9 {
+    .mt-#{$i*5} { margin-top: #{$i*5}px; }
+    .mb-#{$i*5} { margin-bottom: #{$i*5}px; }
+    .mr-#{$i*5} { margin-right: #{$i*5}px; }
+    .ml-#{$i*5} { margin-left: #{$i*5}px; }
+}
+
+// 分割寬度
+@for $i from 2 through 9 { .dv#{$i} { width: #{100%/$i}; } }
+
+//指定文字大小
+@for $i from 13 through 20 {  .ft#{$i} { font-size: #{$i}px; } }
+
+//指定寬度px
+// @for $i from 1 through 200 {  .w#{$i*5}px { width:#{$i*5}px; } }
+
+//指定寬度百分比
+@for $i from 1 through 10 {
+    .w#{$i*10} {
+        margin: 0 auto;
+        width:#{$i*10%};
+    }
+}
+@for $i from 15 through 50 {
+    .lineH-#{$i} {
+        line-height: #{$i}px;
+    }
+}
+
+$w2: 100%/2;
+$w3: 100%/3;
+$w4: 100%/4;
+$w5: 100%/5;
+$w6: 100%/6;

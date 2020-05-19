@@ -1,0 +1,130 @@
+//CloudFront
+.aws-wrap{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-between;
+  width: 100%;
+  @include clearfix;
+  .aws-left, .aws-right{
+    margin: 0 0 1rem;
+    min-height: 18rem;
+    width: calc(50% - 0.5rem);
+  }
+  .aws-left{
+    max-height: 320px;
+    overflow-y: auto;
+  }
+  .aws-main{
+    width: 100%;
+  }
+}
+
+//CDN Distributions
+ul.cdn-list{
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  li{
+    background: #778690;
+    color: #fff;
+    cursor: pointer;
+    margin: 0 auto 0.8rem;
+    padding: 0.5rem;
+    &.active{ background: #2f5dc0; }
+  }
+}
+
+//New Purge Request
+.purge-wrap{
+  p{
+    color: rgb(143, 165, 224);
+    font-size: 0.95rem;
+    margin: 0.5rem auto;
+  }
+  textarea{
+    // border: solid 1px #2c74e7;
+    color: #000;
+    margin: 0 auto 0.5rem;
+    width:100%;
+  }
+}
+
+//Status of Last Purge Requests
+ul.purge-list {
+    display: block;
+    margin: 0;
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    li {
+        align-items: center;
+        border-bottom: solid 1px #eee;
+        color: #333;
+        display: flex;
+        height: auto;
+        line-height: 2.2rem;
+        margin: 0 0 0 0;
+        padding: 0.5rem;
+        @include clearfix;
+        &:hover{ background: #e1e6ee; }
+        &:last-child{ border-bottom: none; }
+    }
+}
+
+/* The Item style */
+ul.purge-list li{
+    .data-id, .data-status, .data-path, .data-time{
+        font-size: 0.95rem;
+        line-height: 1.5rem;
+        overflow: hidden;
+        padding:0;
+        margin:0;
+        text-align: left;
+    }
+}
+
+
+// ul.purge-list li .data-details{
+//   background: #eee;
+//   font-size: 0.9rem;
+//   line-height: 1.3rem;
+//   margin: 0 0 0 10px;
+//   overflow: visible;
+//   padding: 0.5rem;
+//   position: relative;
+//   &::before{
+//     border-left: solid 0px transparent;
+//     border-right: solid 10px #eee;
+//     border-top: solid 8px transparent;
+//     border-bottom: solid 8px transparent;
+//     content: '';
+//     display: block;
+//     height: 0;
+//     left: -8px;
+//     position: absolute;
+//     top: 50%;
+//     transform: translateY(-50%);
+//     width: 0;
+
+//   }
+// }
+
+
+
+/* The Item Width and display true or false */
+@mixin td-width($w1, $w2, $w3, $w4){
+    .data-id    { width: $w1; }
+    .data-status{ width: $w2; }
+    .data-path  { width: $w3; }
+    .data-time  { width: $w4; }
+}
+
+ul.purge-list li{
+    @include td-width( 25%, 20%, 25%, 30%);
+}
+

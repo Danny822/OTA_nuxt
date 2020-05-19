@@ -1,0 +1,125 @@
+.task-wrap{
+    .btn-wrap button{ margin: 0 0.5rem; }
+}
+
+button.btn-prev{
+    margin: 0 0 0 -0.3rem;
+    width: 80px;
+}
+
+.build-task{
+    background: #f3f5fb;
+    border-radius: 15px;
+    display: inline-flex;
+    flex-direction: column;
+    margin: 2rem 0 1rem;
+    min-width: 320px;
+    padding: 1rem;
+    width: 50%;
+    h3{
+        margin: 0 1rem;
+    }
+}
+
+
+//任務設定選擇清單
+.common-table.task-choice{
+    .common-th, .common-tr{        
+        div{
+            flex: auto;
+            &:nth-child(1){ width: 15%; }
+            &:nth-child(2){ width: 16%; }
+            &:nth-child(3){ width: 13%; }
+            &:nth-child(4){ width: 19%; }
+            &:nth-child(5){ width: 10%; }
+            &:nth-child(6){ width: 9%; }
+            &:nth-child(7){ width: 9%; }
+            &:nth-child(8){ width: 9%; }
+        }
+    }
+    .common-tr div{
+        &.txt-red { color: red;     }
+        &.txt-blue{ color: #165bf5; }
+    }
+}
+
+
+
+//任務清單
+.common-table.task-list .common-tr div button{
+    font-size: 0.9rem;
+    height: 36px;
+    line-height: 36px;
+    margin: 0.2rem 0;
+    width: 120px;
+}
+
+.common-table.task-list .common-tr div span{
+    &.done  { color:#20a500; }
+    &.cancel{ color:#555;   }
+}
+
+.common-table.task-list .common-tr svg{
+    color:#2f8ad8;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 0 0.2rem 0 0;
+}
+
+.task-wrap .btn-wrap.table-footer{
+    justify-content: flex-end;
+    button{
+        margin: 0 0 0 0.5rem;
+        position: relative;
+    }
+}
+
+//任務明細
+.task-detail{
+    background: #f4faff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 0 1rem;
+    padding: 1rem 0;
+    .col-4{
+        border-right: dashed 1px #c4dbef;
+        // flex: 1;        
+        &:last-child{ border-right: none; }
+    }
+}
+
+.task-detail ul.list-wrap{
+    display: flex;
+    flex-direction: column;
+}
+
+.task-detail ul.list-wrap li {
+    display: flex;
+    margin: 0 0;
+    text-align: center;
+    width: auto;
+    &.single{
+        align-items: center; 
+        display: flex;   
+        padding: 10px 0.5rem;
+        svg{ margin-right: 0.2rem; }
+    }
+    .title {  width: auto; }
+    .detail { width: auto; }
+}
+
+.kiosk-amount{
+    align-items: center;
+    background: red;;
+    border-radius: 50%;
+    display: flex;
+    font-size: 0.85rem;
+    font-weight: bold;
+    height: 30px;
+    justify-content: center;
+    top: -0.5rem;
+    position: absolute;
+    right: 0.5rem;
+    width: 30px;
+}

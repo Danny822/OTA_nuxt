@@ -1,0 +1,76 @@
+// .project-wrap{
+    
+// }
+
+.project-popup{    
+    padding: 0 1rem 0.8rem;
+    h5{
+        color: #3778af;
+        font-weight: normal;
+        margin:0.8rem 0rem -0.5rem;
+    }
+    >p{
+        margin: 0 0 1rem;
+    }
+}
+
+.project-manager-add{
+    margin: 0.5rem auto 0;
+    position: relative;
+    width: 70%;
+}
+
+
+.add-input{
+    background: #fff;
+    border: solid 1px #c3c3c3;
+    border-radius: 40px;
+    display: inline-flex;
+    justify-content: center;
+    min-width: 320px;
+    padding: 2px;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+    >input[type="text"]{ 
+        background: #fff;    
+        border: none;   
+        border-radius: 40px;
+        font-size: 0.9rem;
+        height: 40px;
+        line-height: 40px;
+        padding: 0 0.8rem;
+        width: calc(100% - 150px);
+    }
+}
+
+.add-list{
+    align-items: flex-start;
+    background: #fff;
+    border: solid 1px #c3c3c3;
+    border-top: none;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px; 
+    box-shadow: 0 2px 5px 0px rgba(#000, 0.2); 
+    display: flex;  
+    flex-direction: column;
+    font-size: 0.85rem;
+    font-weight: bold;
+    justify-content: flex-start;
+    left: 50%;
+    top: 45px;
+    padding: 0.5rem 0;
+    position: absolute;
+    transform: translateX(-50%);
+    width: 92%;
+    z-index: 1;
+    > div{
+        cursor: pointer;
+        padding: 0.3rem 0.8rem 0.5rem;
+        text-align: left;
+        width: 100%;
+        &:hover, &:active{
+            background: #dbe7f1;
+        }
+    }
+}

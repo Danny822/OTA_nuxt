@@ -1,0 +1,125 @@
+.common-tabs{
+    display: flex;
+    justify-content: flex-start;
+    margin: 0 0 -1px 0;
+    position: relative;
+    z-index: 2;
+    a{
+        align-items: center;
+        background: #80a0d0;       
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+        color: #fff;
+        display: flex;
+        font-size: 0.9rem;
+        font-weight: bold;
+        height: 40px;
+        justify-content: center;
+        padding: 0 1.5rem;
+        margin: 0 0.3rem 0 0;
+        &.active, &:hover{
+            background: #f3f5fb;
+            border: solid 1px #e0e5ea;
+            border-bottom: none;
+            color: #000;
+        }
+    }
+}
+
+.search-wrap{
+    align-items: flex-start;
+    background: #f3f5fb;
+    border: solid 1px #e0e5ea;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.5rem 0.8rem;
+    position: relative;
+    text-align: left;
+    width: 100%;
+    z-index: 1;
+    &.has-tab{ border-top-left-radius: 0px; }
+    >button{
+        // bottom: 0.5rem;
+        position: relative;
+        // right: 0.8rem;
+        @media (min-width: 1200px){
+            bottom: 0.5rem;
+            position: absolute;
+            right: 0.8rem;
+        }
+    }
+}
+
+.row{
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+    justify-content: flex-start;
+    padding: 0.2rem 0;
+    width: 100%;
+    // @media (min-width: 1024px){
+    //     width: 100%;
+    // }
+}
+
+.row .title{
+    min-width: 75px;
+    text-align: right;
+}
+
+.row select{
+    align-items: center;
+    background: #fff;
+    border-radius: 0.2rem;
+    border: solid 1px #c3c3c3;
+    font-size: 0.9rem;
+    height: 32px;
+    line-height: 32px;
+    min-width: 120px;
+    margin: 0 0 0 0.5rem;
+    padding: 0 0.1em 0;
+    text-align: left;
+    width: 150px;
+    -moz-appearance: menulist;
+    -webkit-appearance: menulist;
+    appearance: menulist;
+}
+
+.row input[type="text"]{
+    align-items: center;
+    border: solid 1px #c3c3c3;
+    border-radius: 0.2rem;
+    font-size: 0.9rem;
+    height: 32px;
+    line-height: 32px;
+    min-width: 120px;
+    margin: 0 0.5rem 0;
+    padding: 0 0.2em 0;
+    text-align: left;
+    width: 150px;
+}
+
+.multi-select{
+    display:flex;
+    flex-wrap: wrap;
+    margin: 0 0 0 0.5rem;
+    >div{
+        align-items: center;
+        background: #cae8f1;
+        border-radius: 0.2rem;
+        cursor: pointer;
+        display: flex;
+        height: 32px;
+        justify-content: center;
+        margin: 0.2rem 0.5rem 0.2rem 0;
+        min-width: 100px;
+        padding: 0 0.5rem;
+        &.checked, &:hover{
+            background: #2392b3;
+            color: #fff;
+        }
+    }
+}
