@@ -24,7 +24,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.6.3",
     "@nuxtjs/axios": "^5.0.0",
     "animate.css": "^3.7.0",
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "backpack-core": "^0.8.3",
     "base64url": "^3.0.1",
     "consola": "^2.3.0",
